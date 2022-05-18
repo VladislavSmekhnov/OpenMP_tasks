@@ -24,11 +24,8 @@ int main()
     {
         if (a[i] % 7 == 0)
         {
-            if (a[i] > max_7)
-            {
-                #pragma omp critical
-                max_7 = a[i];
-            }
+            #pragma omp critical
+                if (a[i] > max_7) max_7 = a[i];
         }
     }
     printf("Максимальное числовое значение элемента массива, кратного 7-ми = %d\n", max_7);
